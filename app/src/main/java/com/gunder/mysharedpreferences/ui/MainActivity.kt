@@ -1,7 +1,8 @@
-package com.gunder.mysharedpreferences
+package com.gunder.mysharedpreferences.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.gunder.mysharedpreferences.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
