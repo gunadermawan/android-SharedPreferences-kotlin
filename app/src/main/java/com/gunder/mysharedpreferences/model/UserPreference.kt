@@ -11,4 +11,26 @@ internal class UserPreference(context: Context) {
         private const val PHONE_NUMBER = "phone"
         private const val LOVE_MU = "isLove"
     }
+
+    private val preference = context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
+
+    fun setUser(value: UserModel) {
+        val editor = preference.edit()
+        editor.putString(NAME, value.name)
+        editor.putString(EMAIL, value.email)
+        editor.putInt(AGE, value.age!!)
+        editor.putString(PHONE_NUMBER, value.phoneNumber)
+        editor.putBoolean(LOVE_MU, value.isLove!!)
+        editor.apply()
+    }
+
+    fun geUser(): UserModel {
+        val model = UserModel()
+        model.name = preference.getString(NAME, "")
+        model.email = preference.getString(EMAIL, "")
+        model.age = preference.getInt(AGE, 0)
+        model.phoneNumber = preference.getString(PHONE_NUMBER, "")
+        model.isLove = preference.getBoolean(LOVE_MU, false)
+        return model
+    }
 }
