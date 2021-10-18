@@ -39,6 +39,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         supportActionBar?.title = "My User Preference"
         mUserPreference = UserPreference(this)
         showExistPreference()
+//        btn listener
         binding.btnSave.setOnClickListener(this)
     }
 
